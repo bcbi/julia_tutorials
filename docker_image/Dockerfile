@@ -96,7 +96,6 @@ RUN julia -e 'Pkg.add("IJulia");          \
               Pkg.add("Gadfly");          \
               Pkg.add("PyPlot");          \
               Pkg.add("GLMNet");          \
-              Pkg.add("Cxx");             \
               Pkg.add("PlotlyJS");        \
               Pkg.add("MixedModels");     \
               Pkg.add("Mamba");           \
@@ -112,7 +111,6 @@ RUN chown bcbi /home/bcbi/R/x86_64-pc-linux-gnu-library/3.3
 
 RUN R -e 'install.packages(c("devtools",        \
                              "lme4",            \
-                             "tidyverse",       \
                              "randomForests",   \
                              "glmnet",          \
                              "arules",          \

@@ -6,27 +6,27 @@ This repository houses the materials used for introductory classes on using Juli
 * Plotting with PlotlyJS
 
 The Dockerfile can be used to create a Debian image with Anaconda Python 3.6, Julia 0.5.1, and R 3.3.2.
-Also included in this Debian image are many of the more popular packages for these languages (e.g., Scikit-Learn, pandas, numpy, dplyr, ggplot2, Rcpp, lme4, arules, arulesSequences, DataFrames.jl, GLM.jl, PlotlyJS.jl, Cxx.jl, RCall.jl).
+Also included in this Debian image are many of the more popular packages for these languages (e.g., Scikit-Learn, pandas, numpy, Rcpp, lme4, arules, arulesSequences, DataFrames.jl, GLM.jl, PlotlyJS.jl, RCall.jl).
 
 
 ## Building the image locally
 
 ```
     cd docker_image
-    docker build -t bcbi/julia_edu:0.5 .
+    docker build -t bcbi/julia_edu:latest .
 ```
 
 ## Getting the image from bcbi's repo
 
 ```
-    pull bcbi/julia_edu:0.5
+    pull bcbi/julia_edu:latest
 ```
 
 
 ## Running the image interatively
 
 ```
-    docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/bcbi/edu/notebooks:/home/bcbi/notebooks bcbi/julia_edu:0.5
+    docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/bcbi/edu/notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
 ```
 
 #### Note:
@@ -52,4 +52,4 @@ If jupyter is running in your session, you may need a second bash session to int
 
 ## Exit a running container
 
-CTRL+P immediately followed by CTRL+Q.
+Exit or CTRL+P immediately followed by CTRL+Q.
