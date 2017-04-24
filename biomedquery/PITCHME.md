@@ -165,3 +165,23 @@ search_dic = Dict("db"=>"pubmed", "term" => search_term,
 "email" => email)
 esearch_response = esearch(search_dic)
 ```
+
+---
+### Save the response to file
+
+
+```julia
+using XMLconvert
+xmlASCII2file(esearch_response, "./esearch.xml");
+```
+
+---
+### Convert to a Julia (Multi) Dictionary
+
+```julia
+esearch_dict = eparse(esearch_response)
+println("Type of esearch_dict: ", typeof(esearch_dict))
+show_key_structure(esearch_dict)
+```
+
+---
