@@ -132,11 +132,11 @@ sudo /etc/init.d/mysql start
 ```
 
 ---
-### Let's start
+### Let's start with ENTREZ
 
 Create a Julia notebook called entrez
 
----
++++
 ## Import the Module and Environment Variables
 
 ```julia
@@ -146,12 +146,12 @@ umls_user = ENV["UMLS_USER"];
 umls_psswd = ENV["UMLS_PSSWD"];
 ```
 
----
++++
 ## esearch
 
 Request a list of UIDS matching a query from an input dictionary specifying all required parameters specified in the Entrez documentation [NCBI Entrez:Esearch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESearch).
 
----
++++
 
 ### Example
 
@@ -168,7 +168,7 @@ search_dic = Dict("db"=>"pubmed", "term" => search_term,
 esearch_response = esearch(search_dic)
 ```
 
----
++++
 ### Save the response to file
 
 
@@ -177,7 +177,7 @@ using XMLconvert
 xmlASCII2file(esearch_response, "./esearch.xml");
 ```
 
----
++++
 ### Convert to a Julia (Multi) Dictionary
 
 ```julia
@@ -186,7 +186,7 @@ println("Type of esearch_dict: ", typeof(esearch_dict))
 show_key_structure(esearch_dict)
 ```
 
----
++++
 ### Flatten into Dictionary for easy access
 
 
@@ -194,7 +194,7 @@ show_key_structure(esearch_dict)
 flat_easearch_dict = flatten(esearch_dict)
 display(flat_easearch_dict)
 ```
----
++++
 
 ### Get all pmids returned by esearch
 
@@ -203,7 +203,7 @@ display(flat_easearch_dict)
 ids = Array{Int64,1}(flat_easearch_dict["IdList-Id" ])
 ```
 
----
++++
 
 ## efetch
 
@@ -217,7 +217,7 @@ fetch_dic = Dict("db"=>"pubmed","tool" =>"BioJulia",
 efetch_response = efetch(fetch_dic, ids)
 ```
 
----
++++
 
 ### Convert to XML respose to (Multi) Dictionary
 
@@ -227,7 +227,7 @@ efetch_dict = eparse(efetch_response)
 show_key_structure(efetch_dict)
 ```
 
----
++++
 ## 3. Save to MySQL
 
 
@@ -241,11 +241,11 @@ db_config = Dict(:host=>"127.0.0.1",
 db = save_efetch_mysql(efetch_dict, db_config)
 ```
 
----
++++
 
 ## MySQL Schema
 
----
++++
 ### Explore the MySQL Results Database
 
 
@@ -258,7 +258,7 @@ display(articles)
 authors = mysql_execute(db, "select * from author limit 10")
 display(authors)
 ```
----
++++
 ## 4. Save as publications
 
 
@@ -267,8 +267,8 @@ citation_config = Dict(:type => "bibtex", :output_file => "citations_test.bib", 
     save_article_citations(efetch_dict, citation_config);
 ```
 
----
-# BioMedQuery.Processes
++++
+### BioMedQuery.Processes
 
 The library comes with a series a "pre-assembled" workflows. For instance, we often need to call esearc, efetch and save to database as a pipeline.
 
@@ -277,7 +277,7 @@ The library comes with a series a "pre-assembled" workflows. For instance, we of
 using BioMedQuery.Processes
 ```
 
----
++++
 ### esearch, efetch, mysql_save in one line of code
 
 
@@ -286,7 +286,7 @@ db = pubmed_search_and_save(email, search_term, 10,
     save_efetch_mysql, db_config);
 ```
 
----
++++
 
 ### esearch, efetch, save citations in one line of code
 
