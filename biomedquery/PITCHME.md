@@ -1,5 +1,3 @@
-<!-- .slide: style="text-align: left;"> -->
-
 ## BioMedQuery.jl
 
 <span style="font-size:0.6em; color:gray">Isabel Restrepo</span> |
@@ -9,6 +7,7 @@
 ---
 
 ### Set up before class
+
 
 * Install Docker
 * Make sure Docker Daemon is running

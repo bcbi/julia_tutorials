@@ -1,2 +1,2 @@
 theme : white
-theme-override : https://github.com/bcbi/julia_tutorials/tree/master/slides_css/PITCHME.css
+theme-override : /slides_css/PITCHME.css
