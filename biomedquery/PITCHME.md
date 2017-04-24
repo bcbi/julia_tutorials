@@ -9,7 +9,9 @@
 ### Set up before class
 
 * Install Docker
+
 * Make sure Docker Daemon is running
+
 * Download Docker Image bcbi/julia_edu
 
 ```
@@ -37,13 +39,15 @@ docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebo
 ---
 ### ...
 
-* Run Jupyter: Inside the container, run:
+* Run Jupyter: Inside the container,
 
 ```
 ./run_jupyter.sh
 ```
 
-* Open Jupyter in your browser: http:/localhost:8888
+* To open Jupyter visti http:/localhost:8888
+
+
 
 ---
 ### What is BioMedQuery.jl?
