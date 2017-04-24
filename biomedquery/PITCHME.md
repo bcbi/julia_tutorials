@@ -6,26 +6,30 @@
 
 ---
 
-## Set up Docker environment
+## What is expected to already (before call) be set up
 
 * Install Docker
 * Make sure Docker Daemon is running
 * Download Docker Image bcbi/julia_edu
 
- ```
-    pull bcbi/julia_edu:latest
- ```
+```
+pull bcbi/julia_edu:latest
+```
 
- * Make a directory where you will save your Jupyter notebooks. E.g.,
+---
+## Finish setting up (in class)
 
- ```
-    cd ~
-    mkdir php_2561/tutorial_notebooks
- ```
 
- * Run docker image while sharing your notebook directory
+* Make a directory where you will save your Jupyter notebooks. E.g.,
 
  ```
-    docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
+cd ~
+mkdir php_2561/tutorial_notebooks
+ ```
+
+* Run docker image while sharing your notebook directory
+
+```
+docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
 
 ```
