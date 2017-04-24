@@ -28,3 +28,11 @@ mkdir php_2561/tutorial_notebooks
 ```
 docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
 ```
+
+---
+### ...
+
+* Run Jupyter. Inside the container, run:
+```
+./run_jupyter.sh
+```
