@@ -228,7 +228,7 @@ show_key_structure(efetch_dict)
 ```
 
 +++
-## 3. Save to MySQL
+## Save to MySQL
 
 
 ```julia
@@ -259,7 +259,8 @@ authors = mysql_execute(db, "select * from author limit 10")
 display(authors)
 ```
 +++
-## 4. Save as publications
+
+##Save as publications
 
 
 ```julia
@@ -329,4 +330,97 @@ user = ENV["UMLS_USER"];
 psswd = ENV["UMLS_PSSWD"];
 credentials = Credentials(user, psswd)
 query = Dict("string"=>"asthma", "searchType"=>"exact")
+```
+
++++
+### Get a ticket and submit query
+
+
+```julia
+tgt = get_tgt(credentials)
+all_results = search_umls(tgt, query)
+```
+
++++
+###  Get best matching cui and it's semantic type
+
+
+```julia
+cui = best_match_cui(all_results)
+display(cui)
+sm = get_semantic_type(tgt, cui)
+display(sm)
+```
+
++++
+### Processes available for UMLS
+
+* Get all UMLS semantic types for all MeSH stored in a database corresponding to results from an Entrez query
+
+
+```julia
+using BioMedQuery.Processes
+using MySQL
+
+db_host = "127.0.0.1"
+mysql_usr = "root"
+mysql_pswd = "bcbi123"
+dbname = "biomed_query_test"
+
+db = mysql_connect(db_host, mysql_usr, mysql_pswd, dbname)
+
+map_mesh_to_umls_async!(db, credentials)
+
+```
+```julia
+tables = mysql_execute(db, "show tables;")
+display(tables)
+```
+
+
+```julia
+mesh2umls = mysql_execute(db, "select * from mesh2umls")
+display(mesh2umls)
+```
+
++++
+* Filter by semantic type: For all articles in the 'results' database, filter all MeSH associated with a specific semantic type
+
+
+```julia
+labels2ind, occur = umls_semantic_occurrences(db, "Disease or Syndrome")
+
+println("-------------------------------------------------------------")
+println("Output Descritor to Index Dictionary")
+display(labels2ind)
+println("-------------------------------------------------------------")
+
+println("-------------------------------------------------------------")
+println("Output Data Matrix")
+display(full(occur))
+println("-------------------------------------------------------------")
+
+```
+
++++
+
+### Plot conditional probabilities as a histogram
+
+
+```julia
+collect(keys(labels2ind))
+```
+```julia
+using PlotlyJS
+
+trace1 = bar(;x=collect(keys(labels2ind)),
+            y=sum(occur, 2)[:]./10,
+            marker=attr(color="rgba(50, 171, 96, 0.7)",
+            line=attr(color="rgba(50, 171, 96, 1.0)", width=2)))
+
+data = [trace1]
+layout = Layout(;margin_b = 100,
+                 margin_r =100)
+
+plot(data, layout)
 ```
