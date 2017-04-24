@@ -1,5 +1,6 @@
 # Introduction to BioMedQuery.jl
 
+[![Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/master?grs=github&t=white&p=biomedquery)
 
 ## Configuration
 
@@ -32,11 +33,9 @@ as enviroment variables.
     ENV["UMLS_PSSWD"]="password"
     ENV["PBCBICIT_USER"]="mysql_user"
     ENV["PBCBICIT_PSSWD"]="mysql_password"
-    
+
 4. Start mysql service
 
     ```
     sudo /etc/init.d/mysql start
     ```
-    
-    
