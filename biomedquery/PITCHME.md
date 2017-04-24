@@ -44,13 +44,13 @@ docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebo
 ./run_jupyter.sh
 ```
 
-* To open Jupyter visti http:/localhost:8888
+* To open Jupyter visit http:/localhost:8888
 
 
 ---
 ### What is BioMedQuery.jl?
 
-[BioMedQuery.jl](https://github.com/bcbi/BioMedQuery.jl) is Julia package with utilities to interact
+[BioMedQuery.jl](https://github.com/bcbi/BioMedQuery.jl) is a Julia package with utilities to interact
 with BioMedical Databases and APIs. Supported databases/APIS include:
 
 * Entrez Programming Utilities (E-utilities)
@@ -75,10 +75,10 @@ BiomedQuery.Entrez provides an interface to some of the functionality in the [En
 
 The following E-utils functions have been implemented:
 
-<span style="font-size:1em; color:gray"> ESearch </span> |
-<span style="font-size:1em; color:gray"> EFetch </span> |
-<span style="font-size:1em; color:gray"> ELink </span> |
-<span style="font-size:1em; color:gray"> ESummary </span>
+* ESearch
+* EFetch
+* ELink
+* ESummary
 
 ---
 #### Functions available to handle and store NCBI responses
@@ -87,6 +87,7 @@ The following E-utils functions have been implemented:
 * Saving NCBI Responses to XML
 * Saving EFetch to a SQLite database
 * Saving EFetch to a MySQL database
+* Saving EFetch to a publication file (bibtex or endnote)
 
 ---
 #### Functions  available to query the database
@@ -117,13 +118,13 @@ touch .juliarc.jl
 emacs .juliarc.jl
 ```
 
-Type the following ENV variables
+    Type the following ENV variables
 
-ENV["NCBI_EMAIL"]="first_last@brown.edu"
-ENV["UMLS_USER"]="user"
-ENV["UMLS_PSSWD"]="password"
-ENV["PBCBICIT_USER"]="mysql_user"
-ENV["PBCBICIT_PSSWD"]="mysql_password"
+    ENV["NCBI_EMAIL"]="first_last@brown.edu"
+    ENV["UMLS_USER"]="user"
+    ENV["UMLS_PSSWD"]="password"
+    ENV["PBCBICIT_USER"]="mysql_user"
+    ENV["PBCBICIT_PSSWD"]="mysql_password"
 
 * Start mysql service
 
@@ -137,7 +138,7 @@ sudo /etc/init.d/mysql start
 Create a Julia notebook called entrez
 
 +++
-## Import the Module and Environment Variables
+### Import the Module and Environment Variables
 
 ```julia
 using BioMedQuery.Entrez
@@ -147,7 +148,7 @@ umls_psswd = ENV["UMLS_PSSWD"];
 ```
 
 +++
-## esearch
+### esearch
 
 Request a list of UIDS matching a query from an input dictionary specifying all required parameters specified in the Entrez documentation [NCBI Entrez:Esearch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESearch).
 
@@ -204,7 +205,6 @@ ids = Array{Int64,1}(flat_easearch_dict["IdList-Id" ])
 ```
 
 +++
-
 ## efetch
 
 
@@ -218,7 +218,6 @@ efetch_response = efetch(fetch_dic, ids)
 ```
 
 +++
-
 ### Convert to XML respose to (Multi) Dictionary
 
 
@@ -242,8 +241,9 @@ db = save_efetch_mysql(efetch_dict, db_config)
 ```
 
 +++
-
 ## MySQL Schema
+
+![entrez_schema](https://github.com/bcbi/BioMedQuery.jl/blob/master/docs/src/images/save_efetch_schema.001.jpeg)
 
 +++
 ### Explore the MySQL Results Database
@@ -259,7 +259,6 @@ authors = mysql_execute(db, "select * from author limit 10")
 display(authors)
 ```
 +++
-
 ##Save as publications
 
 
@@ -288,7 +287,6 @@ db = pubmed_search_and_save(email, search_term, 10,
 ```
 
 +++
-
 ### esearch, efetch, save citations in one line of code
 
 
@@ -298,13 +296,11 @@ pubmed_search_and_save(email, search_term, 10,
 ```
 
 ---
-
 ### Let's start with UMLS
 
 Create a Julia notebook called umls
 
 +++
-
 ### BioMedQuery.UMLS
 
 
@@ -320,7 +316,6 @@ As of today, the following utilities are available:
 * get the semantic type
 
 +++
-
 ### Set Up
 
 
