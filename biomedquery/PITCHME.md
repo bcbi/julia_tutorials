@@ -22,23 +22,20 @@ pull bcbi/julia_edu:latest
 ### Finish setting up (in class)
 
 * Make a directory where you will save your Jupyter notebooks. E.g.,
-
- ```
- cd ~
- mkdir php_2561/tutorial_notebooks
- ```
+```
+cd ~
+mkdir php_2561/tutorial_notebooks
+```
 
 * Run docker image while sharing your notebook directory
-
 ```
 docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
 ```
 
 ---
-### ...
+### ...Finish setting up (in class)
 
 * Run Jupyter: Inside the container,
-
 ```
 ./run_jupyter.sh
 ```
@@ -74,10 +71,10 @@ BiomedQuery.Entrez provides an interface to some of the functionality in the [En
 
 The following E-utils functions have been implemented:
 
-<span style="font-size:0.8em; color:gray"> ESearch </span> |
-<span style="font-size:0.8em; color:gray"> EFetch </span> |
-<span style="font-size:0.8em; color:gray"> ELink </span> |
-<span style="font-size:0.8em; color:gray"> ESummary </span>
+<span style="font-size:1em; color:gray"> ESearch </span> |
+<span style="font-size:1em; color:gray"> EFetch </span> |
+<span style="font-size:1em; color:gray"> ELink </span> |
+<span style="font-size:1em; color:gray"> ESummary </span>
 
 ---
 Functions available to handle and store NCBI responses
