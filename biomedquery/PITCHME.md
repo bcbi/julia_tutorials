@@ -6,7 +6,7 @@
 
 ---
 
-## What is expected to already (before call) be set up
+### Set up before class
 
 * Install Docker
 * Make sure Docker Daemon is running
@@ -17,8 +17,7 @@ pull bcbi/julia_edu:latest
 ```
 
 ---
-## Finish setting up (in class)
-
+### Finish setting up (in class)
 
 * Make a directory where you will save your Jupyter notebooks. E.g.,
 
