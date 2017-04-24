@@ -61,12 +61,12 @@ with BioMedical Databases and APIs. Supported databases/APIS include:
 ---
 ### Where can I find documentation?
 
-Documentation lives [here](http://bcbi.github.io/BioMedQuery.jl/stable/)
+Documentation lives here: http://bcbi.github.io/BioMedQuery.jl/stable/
 
 ---
 ### What if the functionality I'm looking for doesn't exist?
 
-Submit a [pull request!](https://github.com/bcbi/BioMedQuery.jl/pulls)
+Submit a pull request here: https://github.com/bcbi/BioMedQuery.jl/pulls)
 
 ---
 ## Entrez Utilities (eutils)
