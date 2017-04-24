@@ -245,7 +245,7 @@ db = save_efetch_mysql(efetch_dict, db_config)
 +++
 ## MySQL Schema
 
-![entrez_schema](/images/save_efetch_schema.001.jpeg)
+![Schema](/images/save_efetch_schema.jpeg)
 
 +++
 ### Explore the MySQL Results Database
