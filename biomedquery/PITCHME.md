@@ -3,7 +3,7 @@
 <span style="font-size:0.6em; color:gray">Isabel Restrepo, PhD</span> |
 <span style="font-size:0.6em; color:gray">PHP 2561, Brown University</span> |
 <span style="font-size:0.6em; color:gray">April 25, 2017</span> |
-<span style="font-size:0.6em; color:gray"> View slides: https://gitpitch.com/bcbi/julia_tutorials/master?p=biomedquery </span>
+<span style="font-size:0.6em; color:gray"> Slides: https://gitpitch.com/bcbi/julia_tutorials/master?p=biomedquery </span>
 ---
 
 ### Set up before class
@@ -398,7 +398,6 @@ println("-------------------------------------------------------------")
 ```
 
 +++
-
 ### Plot conditional probabilities as a histogram
 
 
