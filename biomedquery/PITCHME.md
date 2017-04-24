@@ -13,11 +13,9 @@
 * Make sure Docker Daemon is running
 
 * Download Docker Image bcbi/julia_edu
-
- ```
- pull bcbi/julia_edu:latest
- ```
-
+```
+pull bcbi/julia_edu:latest
+```
 * Anyone who didn't get to do these steps before class?
 
 ---
@@ -32,18 +30,18 @@
 
 * Run docker image while sharing your notebook directory
 
- ```
- docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
- ```
+```
+docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
+```
 
 ---
 ### ...
 
 * Run Jupyter: Inside the container,
 
- ```
- ./run_jupyter.sh
- ```
+```
+./run_jupyter.sh
+```
 
 * To open Jupyter visti http:/localhost:8888
 
