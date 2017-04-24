@@ -245,7 +245,7 @@ db = save_efetch_mysql(efetch_dict, db_config)
 +++
 ## MySQL Schema
 
-![entrez_schema](https://github.com/bcbi/BioMedQuery.jl/blob/master/docs/src/images/save_efetch_schema.001.jpeg)
+![entrez_schema](/images/save_efetch_schema.001.jpeg)
 
 +++
 ### Explore the MySQL Results Database
