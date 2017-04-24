@@ -1,1 +1,2 @@
-theme : moon
+theme : white
+theme-override : slides_css/PITCHME.css

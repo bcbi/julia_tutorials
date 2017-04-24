@@ -8,44 +8,44 @@
 
 ### Set up before class
 
-1. Install Docker
+* Install Docker
 
-2. Make sure Docker Daemon is running
+* Make sure Docker Daemon is running
 
-3. Download Docker Image bcbi/julia_edu
+* Download Docker Image bcbi/julia_edu
 
-    ```
-    pull bcbi/julia_edu:latest
-    ```
+  ```
+  pull bcbi/julia_edu:latest
+  ```
 
-4. Anyone who didn't get to do these steps before class?
+* Anyone who didn't get to do these steps before class?
 
 ---
 ### Finish setting up (in class)
 
-1. Make a directory where you will save your Jupyter notebooks. E.g.,
+* Make a directory where you will save your Jupyter notebooks. E.g.,
 
-    ```
-    cd ~
-    mkdir php_2561/tutorial_notebooks
-    ```
+```
+cd ~
+mkdir php_2561/tutorial_notebooks
+```
 
-2. Run docker image while sharing your notebook directory
+* Run docker image while sharing your notebook directory
 
-    ```
-    docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
-    ```
+```
+docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
+```
 
 ---
 ### ...
 
-3. Run Jupyter: Inside the container,
+* Run Jupyter: Inside the container,
 
-    ```
-    ./run_jupyter.sh
-    ```
+  ```
+  ./run_jupyter.sh
+  ```
 
-4. To open Jupyter visti http:/localhost:8888
+* To open Jupyter visti http:/localhost:8888
 
 
 ---
