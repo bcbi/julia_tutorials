@@ -91,3 +91,34 @@ The following E-utils functions have been implemented:
 
 * All PMIDs
 * All MESH descriptors for an article
+
+---
+### Let's start
+
+Create a Julia notebook called entrez
+
+---
+## Import the Module and Environment Variables
+
+```julia
+using BioMedQuery.Entrez
+email = ENV["NCBI_EMAIL"];
+umls_user = ENV["UMLS_USER"];
+umls_psswd = ENV["UMLS_PSSWD"];
+```
+
+---
+## esearch
+
+esearch(search_dict): Requests a list of UIDS matchin a query. The input is a dictionary specifying all requiered parameters specified in the Entrez documentation [NCBI Entrez:Esearch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESearch).
+
+For instance, let's request 10 pmids for papers matching the query: (asthma[MeSH Terms]) AND ("2001/01/29"[Date - Publication] : "2010"[Date - Publication])
+
+
+```julia
+search_term = """(asthma[MeSH Terms]) AND ("2001/01/29"[Date - Publication] : "2010"[Date - Publication])"""
+search_dic = Dict("db"=>"pubmed", "term" => search_term,
+"retstart" => 0, "retmax"=>10,
+"email" => email)
+esearch_response = esearch(search_dic)
+```
