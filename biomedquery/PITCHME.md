@@ -295,3 +295,38 @@ db = pubmed_search_and_save(email, search_term, 10,
 pubmed_search_and_save(email, search_term, 10,
     save_article_citations, citation_config);
 ```
+
+---
+
+### Let's start with UMLS
+
+Create a Julia notebook called umls
+
++++
+
+### BioMedQuery.UMLS
+
+
+Utilities to search the Unified Medical Language System (UMLS). This is a Julia interface to their [REST API](https://documentation.uts.nlm.nih.gov/rest/home.html).
+
+Searching the UMLS requires approved credentials. You can sign up [here](https://uts.nlm.nih.gov//license.html)
+
+As of today, the following utilities are available:
+
+* verify credentials / issue umls tickets
+* search_umls
+* get the best maching cui from a query
+* get the semantic type
+
++++
+
+### Set Up
+
+
+```julia
+using BioMedQuery.UMLS
+user = ENV["UMLS_USER"];
+psswd = ENV["UMLS_PSSWD"];
+credentials = Credentials(user, psswd)
+query = Dict("string"=>"asthma", "searchType"=>"exact")
+```
