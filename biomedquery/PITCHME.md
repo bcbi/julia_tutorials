@@ -18,7 +18,7 @@
 pull bcbi/julia_edu:latest
 ```
 
-* Anyone who didn't get to do these steps before class?
+4. Anyone who didn't get to do these steps before class?
 
 ---
 ### Finish setting up (in class)
