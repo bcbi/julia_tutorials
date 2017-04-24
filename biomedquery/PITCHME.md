@@ -185,3 +185,111 @@ show_key_structure(esearch_dict)
 ```
 
 ---
+### Flatten into Dictionary for easy access
+
+
+```julia
+flat_easearch_dict = flatten(esearch_dict)
+display(flat_easearch_dict)
+```
+---
+
+### Get all pmids returned by esearch
+
+
+```julia
+ids = Array{Int64,1}(flat_easearch_dict["IdList-Id" ])
+```
+
+---
+
+## efetch
+
+
+```julia
+# define the fetch dictionary
+fetch_dic = Dict("db"=>"pubmed","tool" =>"BioJulia",
+"email" => "maria_restrepo@brown.edu", "retmode" => "xml", "rettype"=>"null")
+
+# fetch
+efetch_response = efetch(fetch_dic, ids)
+```
+
+---
+
+### Convert to XML respose to (Multi) Dictionary
+
+
+```julia
+efetch_dict = eparse(efetch_response)
+show_key_structure(efetch_dict)
+```
+
+---
+## 3. Save to MySQL
+
+
+```julia
+db_config = Dict(:host=>"127.0.0.1",
+                 :dbname=>"biomed_query_test",
+                 :username=>"root",
+                 :pswd=>"bcbi123",
+                 :overwrite=>true)
+
+db = save_efetch_mysql(efetch_dict, db_config)
+```
+
+---
+
+## MySQL Schema
+
+---
+### Explore the MySQL Results Database
+
+
+```julia
+using MySQL
+tables = mysql_execute(db, "show tables;")
+display(tables)
+articles = mysql_execute(db, "select * from article limit 10")
+display(articles)
+authors = mysql_execute(db, "select * from author limit 10")
+display(authors)
+```
+---
+## 4. Save as publications
+
+
+```julia
+citation_config = Dict(:type => "bibtex", :output_file => "citations_test.bib", :overwrite=>true)
+    save_article_citations(efetch_dict, citation_config);
+```
+
+---
+# BioMedQuery.Processes
+
+The library comes with a series a "pre-assembled" workflows. For instance, we often need to call esearc, efetch and save to database as a pipeline.
+
+
+```julia
+using BioMedQuery.Processes
+```
+
+---
+### esearch, efetch, mysql_save in one line of code
+
+
+```julia
+db = pubmed_search_and_save(email, search_term, 10,
+    save_efetch_mysql, db_config);
+```
+
+---
+
+### esearch, efetch, save citations in one line of code
+
+
+```julia
+pubmed_search_and_save(email, search_term, 10,
+    save_article_citations, citation_config);
+```
