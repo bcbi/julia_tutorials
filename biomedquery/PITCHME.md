@@ -9,9 +9,7 @@
 ### Set up before class
 
 * Install Docker
-
 * Make sure Docker Daemon is running
-
 * Download Docker Image bcbi/julia_edu
 
 ```
