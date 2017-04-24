@@ -13,9 +13,11 @@
 * Make sure Docker Daemon is running
 
 * Download Docker Image bcbi/julia_edu
+
 ```
 pull bcbi/julia_edu:latest
 ```
+
 * Anyone who didn't get to do these steps before class?
 
 ---
@@ -38,6 +40,7 @@ docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebo
 ### ...Finish setting up (in class)
 
 * Run Jupyter: Inside the container,
+
 ```
 ./run_jupyter.sh
 ```
@@ -95,13 +98,13 @@ The following E-utils functions have been implemented:
 ---
 ### Before we start
 
-- Attach another interactive shell to your docker container
+* Attach another interactive shell to your docker container
 
 ```
 docker exec -it bcbi_julia /bin/bash
 ```
 
-- Create your .juliarc.jl file
+* Create your .juliarc.jl file
 
 ```
 cd ~
@@ -109,7 +112,7 @@ touch .juliarc.jl
 ```
 
 ---
-- Write your environment variables
+* Write your environment variables
 
 ```
 emacs .juliarc.jl
@@ -123,7 +126,7 @@ ENV["UMLS_PSSWD"]="password"
 ENV["PBCBICIT_USER"]="mysql_user"
 ENV["PBCBICIT_PSSWD"]="mysql_password"
 
-- Start mysql service
+* Start mysql service
 
 ```
 sudo /etc/init.d/mysql start
