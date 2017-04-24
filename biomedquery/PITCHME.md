@@ -74,20 +74,21 @@ BiomedQuery.Entrez provides an interface to some of the functionality in the [En
 
 The following E-utils functions have been implemented:
 
-<span style="font-size:0.6em; color:gray"> ESearch </span> |
-<span style="font-size:0.6em; color:gray"> EFetch </span> |
-<span style="font-size:0.6em; color:gray"> ELink </span> |
-<span style="font-size:0.6em; color:gray"> ESummary </span>
+<span style="font-size:0.8em; color:gray"> ESearch </span> |
+<span style="font-size:0.8em; color:gray"> EFetch </span> |
+<span style="font-size:0.8em; color:gray"> ELink </span> |
+<span style="font-size:0.8em; color:gray"> ESummary </span>
 
 ---
-The following utility functions are available to handle and store NCBI responses
+Functions available to handle and store NCBI responses
 
-- EParse - Convert XML response to Julia Dict
-- Saving NCBI Responses to XML
-- Saving EFetch to a SQLite database
-- Saving EFetch to a MySQL database
+* EParse - Convert XML response to Julia Dict
+* Saving NCBI Responses to XML
+* Saving EFetch to a SQLite database
+* Saving EFetch to a MySQL database
 
-The following utility functions are available to query the database
+---
+Functions  available to query the database
 
-- All PMIDs
-- All MESH descriptors for an article
+* All PMIDs
+* All MESH descriptors for an article
