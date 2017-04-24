@@ -14,9 +14,9 @@
 
 * Download Docker Image bcbi/julia_edu
 
-  ```
-  pull bcbi/julia_edu:latest
-  ```
+```
+pull bcbi/julia_edu:latest
+```
 
 * Anyone who didn't get to do these steps before class?
 
@@ -41,9 +41,9 @@ docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebo
 
 * Run Jupyter: Inside the container,
 
-  ```
-  ./run_jupyter.sh
-  ```
+```
+./run_jupyter.sh
+```
 
 * To open Jupyter visti http:/localhost:8888
 
@@ -76,10 +76,10 @@ BiomedQuery.Entrez provides an interface to some of the functionality in the [En
 
 The following E-utils functions have been implemented:
 
-- ESearch
-- EFetch
-- ELink
-- ESummary
+<span style="font-size:0.6em; color:gray"> ESearch <span> |
+<span style="font-size:0.6em; color:gray"> EFetch <span> |
+<span style="font-size:0.6em; color:gray"> ELink <span> |
+<span style="font-size:0.6em; color:gray"> ESummary <span> 
 
 ---
 The following utility functions are available to handle and store NCBI responses
