@@ -22,12 +22,14 @@ pull bcbi/julia_edu:latest
 ### Finish setting up (in class)
 
 * Make a directory where you will save your Jupyter notebooks. E.g.,
+
 ```
 cd ~
 mkdir php_2561/tutorial_notebooks
 ```
 
 * Run docker image while sharing your notebook directory
+
 ```
 docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
 ```
@@ -77,7 +79,7 @@ The following E-utils functions have been implemented:
 <span style="font-size:1em; color:gray"> ESummary </span>
 
 ---
-Functions available to handle and store NCBI responses
+#### Functions available to handle and store NCBI responses
 
 * EParse - Convert XML response to Julia Dict
 * Saving NCBI Responses to XML
@@ -85,7 +87,7 @@ Functions available to handle and store NCBI responses
 * Saving EFetch to a MySQL database
 
 ---
-Functions  available to query the database
+#### Functions  available to query the database
 
 * All PMIDs
 * All MESH descriptors for an article
