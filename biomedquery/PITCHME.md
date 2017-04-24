@@ -110,9 +110,15 @@ umls_psswd = ENV["UMLS_PSSWD"];
 ---
 ## esearch
 
-esearch(search_dict): Requests a list of UIDS matchin a query. The input is a dictionary specifying all requiered parameters specified in the Entrez documentation [NCBI Entrez:Esearch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESearch).
+Request a list of UIDS matching a query from an input dictionary specifying all required parameters specified in the Entrez documentation [NCBI Entrez:Esearch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESearch).
 
-For instance, let's request 10 pmids for papers matching the query: (asthma[MeSH Terms]) AND ("2001/01/29"[Date - Publication] : "2010"[Date - Publication])
+---
+
+### Example
+
+Request 10 pmids for papers matching the query:
+
+<span style="font-size:0.8 em; color:gray"> (asthma[MeSH Terms]) AND ("2001/01/29"[Date - Publication] : "2010"[Date - Publication]) </span>
 
 
 ```julia
