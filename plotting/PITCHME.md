@@ -440,3 +440,16 @@ function clusters()
 end
 clusters()
 ```
+
+---
+### Don't forget plots.jl
+
+It is great for complex layouts.
+
+https://github.com/bcbi/julia_tutorials/blob/master/plotting/stats_plots_recipes.ipynb
+
+---
+### Home of these notes and notebooks
+
+https://github.com/bcbi/julia_tutorials/tree/master/biomedquery
+https://github.com/bcbi/julia_tutorials/tree/master/plotting
