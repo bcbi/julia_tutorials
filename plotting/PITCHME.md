@@ -195,18 +195,6 @@ end
 area1()
 ```
 
-<div id="1f56fcc9-f182-4887-9a6c-b7d0fa1ef9c5" class="plotly-graph-div"></div>
-
-<script>
-    window.PLOTLYENV=window.PLOTLYENV || {};
-    window.PLOTLYENV.BASE_URL="https://plot.ly";
-    require(['plotly'], function(Plotly) {
-        Plotly.newPlot('1f56fcc9-f182-4887-9a6c-b7d0fa1ef9c5', [{"y":[0,2,3,5],"type":"scatter","x":[1,2,3,4],"fill":"tozeroy"},{"y":[3,5,1,7],"type":"scatter","x":[1,2,3,4],"fill":"tonexty"}],
-               {"margin":{"r":40,"l":140,"b":50,"t":80}}, {showLink: false});
-
-    });
- </script>
-
 +++
 
 ```julia
@@ -242,3 +230,225 @@ function dumbell()
     plot(data, layout)
 end
 dumbell()
+```
+
++++
+```julia
+function subplots1()
+    p1 = linescatter1()
+    p2 = linescatter3()
+    p3 = area1()
+    p4 = dumbell()
+    p = [p1 p2; p3 p4]
+    p.plot.layout["showlegend"] = false
+    p.plot.layout["width"] = 1000
+    p.plot.layout["height"] = 600
+    p
+end
+subplots1()
+```
+
+---
+### Statistical plotting
+
+Create a Julia notebook called stats_plotlyjs
+
++++
+
+### Import
+
+```julia
+using PlotlyJS
+```
+
++++
+```julia
+function grouped_bar_example()
+    trace1 = bar(;x=["giraffes", "orangutans", "monkeys"],
+                  y=[20, 14, 23],
+                  name="SF Zoo")
+    trace2 = bar(;x=["giraffes", "orangutans", "monkeys"],
+                  y=[12, 18, 29],
+                  name="LA Zoo")
+    data = [trace1, trace2]
+    layout = Layout(;barmode="group")
+    plot(data, layout)
+end
+grouped_bar_example()
+```
+
++++
+```julia
+function stacked_bar_example()
+    trace1 = bar(;x=["giraffes", "orangutans", "monkeys"],
+                  y=[20, 14, 23],
+                  name="SF Zoo")
+    trace2 = bar(x=["giraffes", "orangutans", "monkeys"],
+                 y=[12, 18, 29],
+                 name="LA Zoo")
+    data = [trace1, trace2]
+    layout = Layout(;barmode="stack")
+    plot(data, layout)
+end
+stacked_bar_example()
+```
+
++++
+```julia
+function two_hists()
+    x0 = randn(500)
+    x1 = x0+1
+
+    trace1 = histogram(x=x0, opacity=0.75)
+    trace2 = histogram(x=x1, opacity=0.75)
+    data = [trace1, trace2]
+    layout = Layout(barmode="overlay")
+    plot(data, layout)
+end
+
+two_hists()
+```
+
++++
+## Joint
+
+```julia
+function hist_2d_example()
+    M = randn(1000,2);
+    M[:,2] -= 0.7M[:,1] + 2;
+
+    trace1 = histogram2d(x = M[:,1], y=M[:,2],
+                         colorscale = [["0" , "rgb(0,225,100)"],["1", "rgb(100,0,200)"]],
+                         xaxis = "x",
+                         yaxis = "y2",)
+
+
+    p1 = plot([trace1])
+end
+hist_2d_example()
+```
+
++++
+# Box (Whisker) Plots
+
+A box plot is a convenient way of graphically depicting numerical data through their quartiles (see figure).
+The quartiles are the three points that divide the data  into four equal groups. The first quartile (Q1) is defined as the middle number between the smallest number and the median of the data set. The second quartile (Q2) is the median of the data. The third quartile (Q3) is the middle value between the median and the highest value of the data set.
+
++++
+Box plots may also have lines extending vertically from the boxes (whiskers) indicating variability outside the upper and lower quartiles, hence the terms box-and-whisker plot. Outliers may be plotted as individual points.  
+
++++
+The bottom and top of the box are always the first and third quartiles, and the band inside the box is always the second quartile (the median). But the ends of the whiskers can represent several possible alternative values, among them (e.g):
+
+* the minimum and maximum of all of the data
+* the lowest datum still within 1.5 IQR (interquartile range) of the lower quartile, and the highest datum still within 1.5 IQR of the upper quartile (often called the Tukey boxplot)
+* one standard deviation above and below the mean of the data
+
++++
+![img](598px-Boxplot_vs_PDF.svg.png)
+
++++
+```julia
+function box4()
+    x0 = ["day 1", "day 1", "day 1", "day 1", "day 1", "day 1",
+          "day 2", "day 2", "day 2", "day 2", "day 2", "day 2"]
+    trace1 = box(;y=[0.2, 0.2, 0.6, 1.0, 0.5, 0.4, 0.2, 0.7, 0.9, 0.1, 0.5, 0.3],
+                  x=x0,
+                  name="kale",
+                  marker_color="#3D9970")
+    trace2 = box(;y=[0.6, 0.7, 0.3, 0.6, 0.0, 0.5, 0.7, 0.9, 0.5, 0.8, 0.7, 0.2],
+                  x=x0,
+                  name="radishes",
+                  marker_color="#FF4136")
+    trace3 = box(;y=[0.1, 0.3, 0.1, 0.9, 0.6, 0.6, 0.9, 1.0, 0.3, 0.6, 0.8, 0.5],
+                  x=x0,
+                  name="carrots",
+                  marker_color="#FF851B")
+    data = [trace1, trace2, trace3]
+    layout = Layout(;yaxis=attr(title="normalized moisture", zeroline=false),
+                    boxmode="group")
+    plot(data, layout)
+end
+box4()
+```
+
++++
+```julia
+function box9()
+    xData = ["Carmelo<br>Anthony", "Dwyane<br>Wade", "Deron<br>Williams",
+             "Brook<br>Lopez", "Damian<br>Lillard", "David<br>West",
+             "Blake<br>Griffin", "David<br>Lee", "Demar<br>Derozan"]
+
+    _getrandom(num, mul) = mul .* rand(num)
+
+    yData = Array[
+            _getrandom(30, 10),
+            _getrandom(30, 20),
+            _getrandom(30, 25),
+            _getrandom(30, 40),
+            _getrandom(30, 45),
+            _getrandom(30, 30),
+            _getrandom(30, 20),
+            _getrandom(30, 15),
+            _getrandom(30, 43)
+        ]
+    colors = ["rgba(93, 164, 214, 0.5)", "rgba(255, 144, 14, 0.5)",
+              "rgba(44, 160, 101, 0.5)", "rgba(255, 65, 54, 0.5)",
+              "rgba(207, 114, 255, 0.5)", "rgba(127, 96, 0, 0.5)",
+              "rgba(255, 140, 184, 0.5)", "rgba(79, 90, 117, 0.5)",
+              "rgba(222, 223, 0, 0.5)"]
+
+    data = GenericTrace[]
+    for i in 1:length(xData)
+        trace = box(;y=yData[i],
+                     name=xData[i],
+                     boxpoints="all",
+                     jitter=0.5,
+                     whiskerwidth=0.2,
+                     fillcolor="cls",
+                     marker_size=2,
+                     line_width=1)
+        push!(data, trace)
+    end
+
+    t = "Points Scored by the Top 9 Scoring NBA Players in 2012"
+    layout = Layout(;title=t,
+                     yaxis=attr(autorange=true, showgrid=true, zeroline=true,
+                                dtick=5, gridcolor="rgb(255, 255, 255)",
+                                gridwidth=1,
+                                zerolinecolor="rgb(255, 255, 255)",
+                                zerolinewidth=2),
+                     margin=attr(l=40, r=30, b=80, t=100),
+                     paper_bgcolor="rgb(243, 243, 243)",
+                     plot_bgcolor="rgb(243, 243, 243)",
+                     showlegend=false)
+    plot(data, layout)
+end
+box9()
+```
++++
+```julia
+function clusters()
+    @eval using Distributions
+    x0 = rand(Normal(2, 0.45), 300)
+    y0 = rand(Normal(2, 0.45), 300)
+    x1 = rand(Normal(6, 0.4), 200)
+    y1 = rand(Normal(6, 0.4), 200)
+    x2 = rand(Normal(4, 0.3), 200)
+    y2 = rand(Normal(4, 0.3), 200)
+
+    data = [scatter(;x=x0, y=y0, mode="markers"),
+              scatter(;x=x1, y=y1, mode="markers"),
+              scatter(;x=x2, y=y2, mode="markers"),
+              scatter(;x=x1, y=y0, mode="markers")]
+
+    args = [(x0, y0, "blue"), (x1, y1, "orange"), (x2, y2, "green"),
+            (x1, y0, "red")]
+    shapes = [circle(x0=minimum(x), y0=minimum(y),
+                     x1=maximum(x), y1=maximum(y);
+                     opacity=0.2, fillcolor=c, line_color=c)
+              for (x, y, c) in args]
+    plot(data, Layout(;height=400, width=480, showlegend=false, shapes=shapes))
+end
+clusters()
+```
