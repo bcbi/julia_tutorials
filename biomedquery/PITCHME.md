@@ -28,7 +28,9 @@ docker pull bcbi/julia_edu:latest
 
 ```
 cd ~
-mkdir php_2561/tutorial_notebooks
+mkdir php_2561
+cd php_2561
+mkdir tutorial_notebooks
 ```
 
 * Run docker image while sharing your notebook directory
