@@ -1,4 +1,4 @@
-# Plotting with Julia
+## Plotting with Julia
 
 <span style="font-size:0.6em; color:gray">Isabel Restrepo, PhD</span> |
 <span style="font-size:0.6em; color:gray">PHP 2561, Brown University</span> |
@@ -8,19 +8,21 @@
 <span style="font-size:0.6em; color:gray"> Slides: https://gitpitch.com/bcbi/julia_tutorials/master?p=plotting </span>
 
 ---
-# Libraries
+## Libraries
 
-## Plots.jl
+### Plots.jl
 
 Highlevel, poweful library that wraps many plotting backends
 
-### Pros
+https://juliaplots.github.io/
+
+#### Pros
 * Flexibility - use your favorite backend library to produce your plots
 * Consistency - change backend without changing your code
 * Smart - use features such as recipes and layouts
 * Great Documentation
 
-### Cons
+#### Cons
 * Does not support every possible backend
 * In some cases some features may not be implemented
 
