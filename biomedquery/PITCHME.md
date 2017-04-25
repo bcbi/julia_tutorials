@@ -103,7 +103,7 @@ The following E-utils functions have been implemented:
 * Attach another interactive shell to your docker container
 
 ```
-docker exec -it bcbi_julia /bin/bash
+docker exec -it bcbi_julia_edu /bin/bash
 ```
 
 * Create your .juliarc.jl file
@@ -125,8 +125,6 @@ emacs .juliarc.jl
     ENV["NCBI_EMAIL"]="first_last@brown.edu"
     ENV["UMLS_USER"]="user"
     ENV["UMLS_PSSWD"]="password"
-    ENV["PBCBICIT_USER"]="mysql_user"
-    ENV["PBCBICIT_PSSWD"]="mysql_password"
 
 * Start mysql service
 
