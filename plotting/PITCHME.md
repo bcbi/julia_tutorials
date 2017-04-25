@@ -332,7 +332,7 @@ hist_2d_example()
 # Box (Whisker) Plots
 
 A box plot is a convenient way of graphically depicting numerical data through their quartiles (see figure).
-+++
+
 ![img](/images/598px-Boxplot_vs_PDF.png)
 
 +++
