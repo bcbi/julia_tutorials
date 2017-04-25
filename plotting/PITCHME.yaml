@@ -1,0 +1,3 @@
+theme : white
+theme-override : /slides_css/PITCHME.css
+slide-number: true
