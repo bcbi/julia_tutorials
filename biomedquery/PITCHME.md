@@ -126,6 +126,9 @@ emacs .juliarc.jl
     ENV["UMLS_USER"]="user"
     ENV["UMLS_PSSWD"]="password"
 
+    To save: ctrl-x ctrl-s
+    To quit: ctrl-x ctrl-c
+
 * Start mysql service
 
 ```
