@@ -52,6 +52,7 @@ https://github.com/GiovineItalia/Gadfly.jl
 ## PyPlot.jl
 
 A Julia wrapper around the popular python package PyPlot (Matplotlib). It uses PyCall.jl to pass data with minimal overhead.
+https://github.com/JuliaPy/PyPlot.jl
 
 +++
 ### Pros:
@@ -74,6 +75,9 @@ A Julia wrapper around the popular python package PyPlot (Matplotlib). It uses P
 Both libraries have basically identical interface, one uses local resources, the other the cloud.
 Plotly.js is built on top of d3.js and stack.gl to create a high-level, declarative charting library. plotly.js ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps.
 PlotlyJS is the corresponding Julia interface. This package constructs plotly graphics using all local resources. To interact or save graphics to the Plotly cloud, use the plotly.jl library.
+
+https://github.com/sglyon/PlotlyJS.jl
+
 
 +++
 ### Pros:
