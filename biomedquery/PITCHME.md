@@ -158,6 +158,8 @@ Create a Julia notebook called entrez
 +++
 ### Import the Module and Environment Variables
 
+* Regular users:
+
 ```julia
 using BioMedQuery.Entrez
 email = ENV["NCBI_EMAIL"];
@@ -165,7 +167,14 @@ umls_user = ENV["UMLS_USER"];
 umls_psswd = ENV["UMLS_PSSWD"];
 ```
 
-* AWS users, you'll need to type your credentials directly on the script 
+* AWS users:
+
+```julia
+using BioMedQuery.Entrez
+email = "your email";
+umls_user = "your umls user";
+umls_psswd = IJulia.readprompt("UMLS password", password=true);
+```
 
 +++
 ### esearch
