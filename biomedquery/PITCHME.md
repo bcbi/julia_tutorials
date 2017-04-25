@@ -19,7 +19,18 @@
 docker pull bcbi/julia_edu:latest
 ```
 
-* Anyone who didn't get to do these steps before class?
+* Is everyone done with these steps?
+
+---
+### AWS?
+
+http://34.207.254.102:8888/
+
+hcwang kjeong kjline pc16 vdantu
+
+http://54.173.109.173:8888/
+
+amtran bbqu bmle jsleung mquinn nchou
 
 ---
 ### Finish setting up (in class)
@@ -102,6 +113,7 @@ The following E-utils functions have been implemented:
 ---
 ### Before we start
 
+(AWS users ... skip)
 * Attach another interactive shell to your docker container
 
 ```
@@ -116,6 +128,7 @@ touch .juliarc.jl
 ```
 
 ---
+(AWS users ... skip)
 * Write your environment variables
 
 ```
@@ -151,6 +164,8 @@ email = ENV["NCBI_EMAIL"];
 umls_user = ENV["UMLS_USER"];
 umls_psswd = ENV["UMLS_PSSWD"];
 ```
+
+* AWS users, you'll need to type your credentials directly on the script 
 
 +++
 ### esearch

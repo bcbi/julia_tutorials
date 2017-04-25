@@ -32,12 +32,14 @@ https://juliaplots.github.io/
 ## Gladfly.jl
 
 A Julia implementation inspired by the "Grammar of Graphics" and ggplot2. Primary author: Daniel C Jones
+https://github.com/GiovineItalia/Gadfly.jl
 
 +++
 ### Pros:
 * Clean look Lots of features
 * Flexible when combined with Compose.jl (inset plots, etc)
 * Familiar to R users
+* Good aesthetics
 
 +++
 ### Cons:
@@ -442,9 +444,11 @@ clusters()
 ```
 
 ---
-### Don't forget plots.jl
+### Don't forget other libraries
 
-It is great for complex layouts.
+Plots.jl - is great for complex layouts.
+Vega.jl - great looking plots but it is in transition at the moment
+Gadfly.gl - some plots are easy out of the box
 
 https://github.com/bcbi/julia_tutorials/blob/master/plotting/stats_plots_recipes.ipynb
 
