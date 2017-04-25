@@ -332,20 +332,8 @@ hist_2d_example()
 # Box (Whisker) Plots
 
 A box plot is a convenient way of graphically depicting numerical data through their quartiles (see figure).
-The quartiles are the three points that divide the data  into four equal groups. The first quartile (Q1) is defined as the middle number between the smallest number and the median of the data set. The second quartile (Q2) is the median of the data. The third quartile (Q3) is the middle value between the median and the highest value of the data set.
-
 +++
-Box plots may also have lines extending vertically from the boxes (whiskers) indicating variability outside the upper and lower quartiles, hence the terms box-and-whisker plot. Outliers may be plotted as individual points.  
-
-+++
-The bottom and top of the box are always the first and third quartiles, and the band inside the box is always the second quartile (the median). But the ends of the whiskers can represent several possible alternative values, among them (e.g):
-
-* the minimum and maximum of all of the data
-* the lowest datum still within 1.5 IQR (interquartile range) of the lower quartile, and the highest datum still within 1.5 IQR of the upper quartile (often called the Tukey boxplot)
-* one standard deviation above and below the mean of the data
-
-+++
-![img](598px-Boxplot_vs_PDF.svg.png)
+![img](/images/598px-Boxplot_vs_PDF.png)
 
 +++
 ```julia
