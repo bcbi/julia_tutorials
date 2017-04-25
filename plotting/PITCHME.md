@@ -184,3 +184,61 @@ function linescatter5()
 end
 linescatter5()
 ```
+
++++
+```julia
+function area1()
+    trace1 = scatter(;x=1:4, y=[0, 2, 3, 5], fill="tozeroy")
+    trace2 = scatter(;x=1:4, y=[3, 5, 1, 7], fill="tonexty")
+    plot([trace1, trace2])
+end
+area1()
+```
+
+<div id="1f56fcc9-f182-4887-9a6c-b7d0fa1ef9c5" class="plotly-graph-div"></div>
+
+<script>
+    window.PLOTLYENV=window.PLOTLYENV || {};
+    window.PLOTLYENV.BASE_URL="https://plot.ly";
+    require(['plotly'], function(Plotly) {
+        Plotly.newPlot('1f56fcc9-f182-4887-9a6c-b7d0fa1ef9c5', [{"y":[0,2,3,5],"type":"scatter","x":[1,2,3,4],"fill":"tozeroy"},{"y":[3,5,1,7],"type":"scatter","x":[1,2,3,4],"fill":"tonexty"}],
+               {"margin":{"r":40,"l":140,"b":50,"t":80}}, {showLink: false});
+
+    });
+ </script>
+
++++
+
+```julia
+function dumbell()
+    # reference: https://plot.ly/r/dumbbell-plots/
+    @eval using DataFrames
+
+    # read Data into dataframe
+    nm = tempname()
+    url = "https://raw.githubusercontent.com/plotly/datasets/master/school_earnings.csv"
+    download(url, nm)
+    df = readtable(nm)
+    rm(nm)
+
+    # sort dataframe by male earnings
+    df = sort(df, cols=[:Men], rev=false)
+
+    men = scatter(;y=df[:School], x=df[:Men], mode="markers", name="Men",
+                   marker=attr(color="blue", size=12))
+    women = scatter(;y=df[:School], x=df[:Women], mode="markers", name="Women",
+                     marker=attr(color="pink", size=12))
+
+    lines = map(eachrow(df)) do r
+        scatter(y=fill(r[:School], 2), x=[r[:Women], r[:Men]], mode="lines",
+                name=r[:School], showlegend=false, line_color="gray")
+    end
+
+    data = Base.typed_vcat(GenericTrace, men, women, lines)
+    layout = Layout(width=650, height=650, margin_l=100, yaxis_title="School",
+                    xaxis_title="Annual Salary (thousands)",
+                    title="Gender earnings disparity")
+
+    plot(data, layout)
+end
+dumbell()
