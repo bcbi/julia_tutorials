@@ -26,11 +26,11 @@ docker pull bcbi/julia_edu:latest
 
 http://34.207.254.102:8888/
 
-hcwang kjeong kjline pc16 vdantu
+hcwang | kjeong | kjline  | pc16 | vdantu
 
 http://54.173.109.173:8888/
 
-amtran bbqu bmle jsleung mquinn nchou
+amtran | bbqu | bmle | jsleung | mquinn | nchou
 
 ---
 ### Finish setting up (in class)
