@@ -16,7 +16,7 @@
 * Download Docker Image bcbi/julia_edu
 
 ```
-pull bcbi/julia_edu:latest
+docker pull bcbi/julia_edu:latest
 ```
 
 * Anyone who didn't get to do these steps before class?
