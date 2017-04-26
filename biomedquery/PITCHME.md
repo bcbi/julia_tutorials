@@ -51,6 +51,7 @@ cd /
 mkdir jupyter_notebooks
 ```
 ---
+### ...Finish setting up (in class)
 * Run docker image while sharing your notebook directory
 
 MacOS users
