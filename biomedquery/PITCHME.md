@@ -1,8 +1,8 @@
 ## BioMedQuery.jl
 
 <span style="font-size:0.6em; color:gray">Isabel Restrepo, PhD</span> |
-<span style="font-size:0.6em; color:gray">PHP 2561, Brown University</span> |
-<span style="font-size:0.6em; color:gray">April 25, 2017</span>
+<span style="font-size:0.6em; color:gray">Brown University</span> |
+<span style="font-size:0.6em; color:gray">April 26, 2017</span>
 
 
 <span style="font-size:0.6em; color:gray"> Slides: https://gitpitch.com/bcbi/julia_tutorials/master?p=biomedquery </span>
@@ -37,21 +37,40 @@ amtran | bbqu | bmle | jsleung | mquinn | nchou
 
 * Make a directory where you will save your Jupyter notebooks. E.g.,
 
+MacOS users
+
 ```
 cd ~
-mkdir php_2561
-cd php_2561
-mkdir tutorial_notebooks
+mkdir jupyter_notebooks
+```
+
+Windows users
+
+```
+cd /
+mkdir jupyter_notebooks
 ```
 
 * Run docker image while sharing your notebook directory
 
+MacOS users
 ```
-docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
+docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/jupyter_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
+```
+
+Windows users
+```
+docker run -it --name bcbi_julia_edu -p 8888:8888  -v /jupyter_notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
 ```
 
 ---
 ### ...Finish setting up (in class)
+
+* Start mysql service
+
+```
+sudo /etc/init.d/mysql start
+```
 
 * Run Jupyter: Inside the container,
 
@@ -59,8 +78,7 @@ docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/php_2561/tutorial_notebo
 ./run_jupyter.sh
 ```
 
-* To open Jupyter visit http:/localhost:8888
-
+* To open Jupyter visit http://localhost:8888 or http://0.0.0.0:8888
 
 ---
 ### What is BioMedQuery.jl?
@@ -111,63 +129,13 @@ The following E-utils functions have been implemented:
 * All MESH descriptors for an article
 
 ---
-### Before we start
-
-(AWS users ... skip)
-* Attach another interactive shell to your docker container
-
-```
-docker exec -it bcbi_julia_edu /bin/bash
-```
-
-* Create your .juliarc.jl file
-
-```
-cd ~
-touch .juliarc.jl
-```
-
----
-(AWS users ... skip)
-* Write your environment variables
-
-```
-emacs .juliarc.jl
-```
-
-    Type the following ENV variables
-
-    ENV["NCBI_EMAIL"]="first_last@brown.edu"
-    ENV["UMLS_USER"]="user"
-    ENV["UMLS_PSSWD"]="password"
-
-    To save: ctrl-x ctrl-s
-    To quit: ctrl-x ctrl-c
-
-* Start mysql service
-
-```
-sudo /etc/init.d/mysql start
-```
-
----
 ### Let's start with ENTREZ
 
 Create a Julia notebook called entrez
 
 +++
-### Import the Module and Environment Variables
+### Import the Module and set up email
 
-* Regular users:
-
-```julia
-using BioMedQuery.Entrez
-email = ENV["NCBI_EMAIL"];
-umls_user = ENV["UMLS_USER"];
-umls_psswd = ENV["UMLS_PSSWD"];
-```
-
-* AWS users:
 
 ```julia
 using BioMedQuery.Entrez
@@ -350,8 +318,9 @@ As of today, the following utilities are available:
 
 ```julia
 using BioMedQuery.UMLS
-user = ENV["UMLS_USER"];
-psswd = ENV["UMLS_PSSWD"];
+
+user = "your umls user";
+psswd = IJulia.readprompt("UMLS password", password=true);
 credentials = Credentials(user, psswd)
 query = Dict("string"=>"asthma", "searchType"=>"exact")
 ```

@@ -1,8 +1,8 @@
 ## Plotting with Julia
 
 <span style="font-size:0.6em; color:gray">Isabel Restrepo, PhD</span> |
-<span style="font-size:0.6em; color:gray">PHP 2561, Brown University</span> |
-<span style="font-size:0.6em; color:gray">April 25, 2017</span>
+<span style="font-size:0.6em; color:gray">Brown University</span> |
+<span style="font-size:0.6em; color:gray">April 26, 2017</span>
 
 
 <span style="font-size:0.6em; color:gray"> Slides: https://gitpitch.com/bcbi/julia_tutorials/master?p=plotting </span>
@@ -12,7 +12,7 @@
 
 ### Plots.jl
 
-Highlevel, poweful library that wraps many plotting backends
+High-level, powerful library that wraps many plotting backends
 
 https://juliaplots.github.io/
 
