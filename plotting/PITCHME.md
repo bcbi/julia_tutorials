@@ -454,10 +454,14 @@ Plots.jl - is great for complex layouts.
 Vega.jl - great looking plots but it is in transition at the moment
 Gadfly.gl - some plots are easy out of the box
 
-https://github.com/bcbi/julia_tutorials/blob/master/plotting/stats_plots_recipes.ipynb
+<span style="font-size:0.4em;> https://github.com/bcbi/julia_tutorials/blob/master/plotting/stats_plots_recipes.ipynb</span>
 
 ---
 ### Home of these notes and notebooks
 
+<span style="font-size:0.4em;>
 https://github.com/bcbi/julia_tutorials/tree/master/biomedquery
+</span>
+<span style="font-size:0.4em;>
 https://github.com/bcbi/julia_tutorials/tree/master/plotting
+</span>
