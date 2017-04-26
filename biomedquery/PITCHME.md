@@ -239,8 +239,6 @@ db = save_efetch_mysql(efetch_dict, db_config)
 ```
 
 +++
-## MySQL Schema
-
 ![Schema](/images/save_efetch_schema.jpeg)
 
 +++
