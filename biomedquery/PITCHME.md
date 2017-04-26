@@ -50,7 +50,7 @@ Windows users
 cd /
 mkdir jupyter_notebooks
 ```
-
+---
 * Run docker image while sharing your notebook directory
 
 MacOS users
