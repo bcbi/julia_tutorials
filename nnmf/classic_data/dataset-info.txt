@@ -1,0 +1,4 @@
+min term len = 3
+a term must appear at least in 3 docs
+a term can appear at most 95% of docs
+stemming = yes (porter)
