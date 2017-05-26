@@ -51,5 +51,4 @@ If jupyter is running in your session, you may need a second bash session to int
 ```
 
 ## Exit a running container
-
-Exit or CTRL+P immediately followed by CTRL+Q.
+Simply type `exit`, or alternatively, you can use CTRL+P immediately followed by CTRL+Q.
