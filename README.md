@@ -4,4 +4,4 @@ This branch houses Julia-language course tutorials for: BIOL6535 Preclinical Ele
 Summer 2017 at Brown University. The topics include:
 
 * Statistics
-* Plotting and Visualization
+* Plotting and Visualization [![Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/biol6535_summer17?grs=github&t=white&p=plotting)
