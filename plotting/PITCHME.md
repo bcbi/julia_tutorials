@@ -6,30 +6,18 @@
 
 ---
 ## Libraries
+* [Gadfly.jl](https://github.com/GiovineItalia/Gadfly.jl)
+* [Plots.jl](https://github.com/JuliaPlots/Plots.jl)
+* [PlotlyJS.jl](https://github.com/sglyon/PlotlyJS.jl)
+* [PyPlot.jl](https://github.com/JuliaPy/PyPlot.jl)
+* [GLVisualize.jl](https://github.com/JuliaGL/GLVisualize.jl)
+* [Vega.jl](https://github.com/johnmyleswhite/Vega.jl)
 
-### Plots.jl
-
-High-level, powerful library that wraps many plotting backends
-
-https://juliaplots.github.io/
-
-+++
-#### Pros
-* Flexibility - use your favorite backend library to produce your plots
-* Consistency - change backend without changing your code
-* Smart - use features such as recipes and layouts
-* Great Documentation
-
-+++
-#### Cons
-* Does not support every possible backend
-* In some cases some features may not be implemented
 
 ---
 ## Gladfly.jl
 
-A Julia implementation inspired by the "Grammar of Graphics" and ggplot2. Primary author: Daniel C Jones
-https://github.com/GiovineItalia/Gadfly.jl
+A Julia implementation inspired by the "Grammar of Graphics" and ggplot2.
 
 +++
 ### Pros:
@@ -46,10 +34,53 @@ https://github.com/GiovineItalia/Gadfly.jl
 * No interactivity
 
 ---
+### Plots.jl
+
+High-level, powerful library that wraps many plotting backends
+
++++
+#### Pros
+* Flexibility - use your favorite backend library to produce your plots
+* Consistency - change backend without changing your code
+* Smart - use features such as recipes and layouts
+* Many Examples
+* Recipes for stat plots and fancy subplots
+
++++
+#### Cons
+* Ambitious Goal. In some cases some features may not be implemented
+* Sometimes its hard to find documentation of how to changes properties
+
+---
+## PlotlyJS/Plotly
+
+Both libraries have basically identical interface, the first one uses local resources, the later the cloud.
+Plotly.js is built on top of d3.js and stack.gl to create a high-level, declarative charting library. plotly.js ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps.
+PlotlyJS is the corresponding Julia interface. This package constructs plotly graphics using all local resources. To interact or save graphics to the Plotly cloud, use the plotly.jl library.
+
+
+
++++
+### Pros:
+* Tons of functionality/Super configurable
+* 2D and 3D
+* Mature library
+* Interactivity (even when inline)
+* Standalone or inline
+* Great looking plots
+
++++
+### Cons:
+* No custom shapes
+* JSON may limit performance
+* Sometime it's difficult to save to file as SVG. (Okay as png and html)
+* To save to file requieres "plotting front-end", which may not work when working on remote servers
+* Silent failures of undefined properties
+
+---
 ## PyPlot.jl
 
 A Julia wrapper around the popular python package PyPlot (Matplotlib). It uses PyCall.jl to pass data with minimal overhead.
-https://github.com/JuliaPy/PyPlot.jl
 
 +++
 ### Pros:
@@ -66,29 +97,6 @@ https://github.com/JuliaPy/PyPlot.jl
 * Dependencies frequently cause setup issues
 * Inconsistent output depending on Matplotlib version
 
----
-## PlotlyJS/Plotly
-
-Both libraries have basically identical interface, one uses local resources, the other the cloud.
-Plotly.js is built on top of d3.js and stack.gl to create a high-level, declarative charting library. plotly.js ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps.
-PlotlyJS is the corresponding Julia interface. This package constructs plotly graphics using all local resources. To interact or save graphics to the Plotly cloud, use the plotly.jl library.
-
-https://github.com/sglyon/PlotlyJS.jl
-
-
-+++
-### Pros:
-* Tons of functionality/Super configurable
-* 2D and 3D
-* Mature library
-* Interactivity (even when inline)
-* Standalone or inline
-* Great looking plots
-
-+++
-### Cons:
-* No custom shapes
-* JSON may limit performance
 
 ---
 ### Let's start with PlotlyJS
