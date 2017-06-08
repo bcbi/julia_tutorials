@@ -5,7 +5,7 @@
 <span style="font-size:0.6em; color:gray">April 26, 2017</span>
 
 
-[![Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/master?grs=github&t=white&p=plotting)
+[![Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/biol6535_summer17?grs=github&t=white&p=plotting)
 
 ---
 ## Libraries
