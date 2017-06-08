@@ -1,54 +1,7 @@
 # Intro to Julia
 
-This repository houses the materials used for introductory classes on using Julia for:
+This branch houses Julia-language course tutorial for: BIOL6535 Preclinical Elective
+Summer 2017 at Brown University. The topics include:
+
 * Statistics
-* Biomedical Queries using Entrez, UMLS and ClinicalTrials.gov
-* Plotting with PlotlyJS
-
-The Dockerfile can be used to create a Debian image with Anaconda Python 3.6, Julia 0.5.1, and R 3.3.2.
-Also included in this Debian image are many of the more popular packages for these languages (e.g., Scikit-Learn, pandas, numpy, Rcpp, lme4, arules, arulesSequences, DataFrames.jl, GLM.jl, PlotlyJS.jl, RCall.jl).
-
-
-## Building the image locally
-
-```
-    cd docker_image
-    docker build -t bcbi/julia_edu:latest .
-```
-
-## Getting the image from bcbi's repo
-
-```
-    pull bcbi/julia_edu:latest
-```
-
-
-## Running the image interatively
-
-```
-    docker run -it --name bcbi_julia_edu -p 8888:8888  -v ~/bcbi/edu/notebooks:/home/bcbi/notebooks bcbi/julia_edu:latest
-```
-
-#### Note:
-
-* ~/bcbi/edu/notebooks is a shared directory where jupyter notebooks live. You may specify your directory of preference
-
-
-## Run the jupyter notebook
-
-Once inside the container run
-
-```
-    ./run_jupyter.sh
-```
-
-## Open a second interactive bash session
-
-If jupyter is running in your session, you may need a second bash session to interact with your container. You may do so running:
-
-```
-    docker exec -it bcbi_edu_julia /bin/bash
-```
-
-## Exit a running container
-Simply type `exit`, or alternatively, you can use CTRL+P immediately followed by CTRL+Q.
+* Plotting and Visualization
