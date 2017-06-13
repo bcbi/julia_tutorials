@@ -1,5 +1,8 @@
 
 using Plots
+using StatPlots
+using DataFrames, RDatasets
+
 plotlyjs()
 
 function linescatter()
@@ -97,7 +100,6 @@ end
 
 two_hists()
 
-using StatPlots
 function box_plot()
     x1 = ["day 1", "day 1", "day 1", "day 1", "day 1", "day 1",
           "day 2", "day 2", "day 2", "day 2", "day 2", "day 2"]
@@ -119,13 +121,14 @@ box_plot()
 
 
 
-using DataFrames, RDatasets
-iris = dataset("datasets", "iris");
-head(iris)
 
-scatter(iris, :SepalLength, :SepalWidth, group=:Species,
+function dataframe_scatter()
+    pyplot()
+    iris = dataset("datasets", "iris");
+    display(head(iris))
+    scatter(iris, :SepalLength, :SepalWidth, group=:Species,
         title = "Iris Sepal lengh vs width",
         xlabel = "Length", ylabel = "Width",
         m=(0.5, [:cross :hex :star7], 12))
-
-
+end
+dataframe_scatter()

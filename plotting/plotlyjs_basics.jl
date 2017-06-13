@@ -1,4 +1,6 @@
+
 using PlotlyJS
+using DataFrames, RDatasets
 
 function linescatter()
     trace1 = scatter(;x=1:4, y=[10, 15, 13, 17])
@@ -6,16 +8,16 @@ function linescatter()
 end
 linescatter()
 
-function linescatter2()
+function multiple_scatter_traces()
     trace1 = scatter(;x=1:4, y=[10, 15, 13, 17], mode="markers", name="marker only")
     trace2 = scatter(;x=1:4, y=[16, 5, 11, 9], mode="lines", name="line")
     trace3 = scatter(;x=1:4, y=[12, 9, 15, 12], mode="lines+markers", name="line+marker")
     trace4 = scatter(;x=1:4, y=[5, 10, 8, 12], mode="lines", line_dash="dash", name="dash")
     plot([trace1, trace2, trace3, trace4])
 end
-linescatter2()
+multiple_scatter_traces()
 
-function linescatter3()
+function data_labels()
     trace1 = scatter(;x=1:5, y=[1, 6, 3, 6, 1],
                       mode="markers+text", name="Team A",
                       textposition="top center",
@@ -36,7 +38,7 @@ function linescatter3()
                                  color="grey"))
     plot(data, layout)
 end
-linescatter3()
+data_labels()
 
 function area1()
     trace1 = scatter(;x=1:4, y=[0, 2, 3, 5], fill="tozeroy")
@@ -65,7 +67,7 @@ function advanced_layouts()
     data = [trace1, trace2, trace3]
     xdomains = [[0,0.3], [0.33, 0.53] , [0.56, 0.78], [0.8, 1] ]
     ydomains = [[0,1],   [0, 0.27] , [0.33, 0.63], [0.66, 1] ]
-    layout = Layout(; xaxis_domain=xdomains[1],
+    layout = Layout(; xaxis_domain=xdomains[1], 
                     xaxis2_domain=xdomains[2], yaxis2_domain=ydomains[2],yaxis2_anchor="x2", xaxis2_anchor="y2",
                     xaxis3_domain=xdomains[2], yaxis3_domain=ydomains[3],yaxis3_anchor="x3", xaxis3_anchor="y3"
                     )
@@ -136,12 +138,14 @@ function box_plot()
 end
 box_plot()
 
-using DataFrames, RDatasets
-iris = dataset("datasets", "iris");
-head(iris)
+function data_frame_scatter()
+    iris = dataset("datasets", "iris");
+    display(head(iris))
+    my_trace = scatter(iris, x=:SepalLength, y=:SepalWidth, mode="markers", group=:Species)
+    plot(my_trace)
+    p = Plot(iris, x=:SepalLength, y=:SepalWidth, mode="markers", marker_size=8, group=:Species)
+    _p = JupyterPlot(p) #In Atom use _p = ElectronPlot(p)
+    display(_p)
+end
 
-my_trace = scatter(iris, x=:SepalLength, y=:SepalWidth, mode="markers", group=:Species)
-plot(my_trace)
-p = Plot(iris, x=:SepalLength, y=:SepalWidth, mode="markers", marker_size=8, group=:Species)
-_p = JupyterPlot(p) #In Atom use _p = ElectronPlot(p)
-display(_p)
+data_frame_scatter()
