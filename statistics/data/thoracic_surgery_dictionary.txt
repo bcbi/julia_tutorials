@@ -1,0 +1,37 @@
+Data Source: 
+https://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data#
+
+Creators: Marek Lubicz (1), Konrad Pawelczyk (2), Adam Rzechonek (2), Jerzy Kolodziej (2) 
+-- (1) Wroclaw University of Technology, wybrzeze Wyspianskiego 27, 50-370, Wroclaw, Poland 
+-- (2) Wroclaw Medical University, wybrzeze L. Pasteura 1, 50-367 Wroclaw, Poland 
+
+Donor: Maciej Zieba (maciej.zieba '@' pwr.wroc.pl), Jakub M. Tomczak (jakub.tomczak '@' pwr.wroc.pl), (+48) 71 320 44 53 
+
+Date: November, 2013
+
+
+
+Data Set Information:
+
+The data was collected retrospectively at Wroclaw Thoracic Surgery Centre for patients who underwent major lung resections for primary lung cancer in the years 2007 to 2011. The Centre is associated with the Department of Thoracic Surgery of the Medical University of Wroclaw and Lower-Silesian Centre for Pulmonary Diseases, Poland, while the research database constitutes a part of the National Lung Cancer Registry, administered by the Institute of Tuberculosis and Pulmonary Diseases in Warsaw, Poland.
+
+
+Attribute Information:
+
+1. icd10: Diagnosis - specific combination of ICD-10 codes for primary and secondary as well multiple tumours if any (DGN3,DGN2,DGN4,DGN6,DGN5,DGN8,DGN1) 
+2. fvc: Forced vital capacity - FVC (numeric) 
+3. fev1: Volume that has been exhaled at the end of the first second of forced expiration - FEV1 (numeric) 
+4. zubrod: Performance status - Zubrod scale (PRZ2,PRZ1,PRZ0) 
+5. pain: Pain before surgery (T,F) 
+6. haemoptysis: Haemoptysis before surgery (T,F) 
+7. dyspnoea: Dyspnoea before surgery (T,F) 
+8. cough: Cough before surgery (T,F) 
+9. weakness: Weakness before surgery (T,F) 
+10. tumor_size: T in clinical TNM - size of the original tumour, from OC11 (smallest) to OC14 (largest) (OC11,OC14,OC12,OC13) 
+11. diabetes: Type 2 DM - diabetes mellitus (T,F) 
+12. mi_6months: MI up to 6 months (T,F) 
+13. peri_artery_disease: PAD - peripheral arterial diseases (T,F) 
+14. smoking: Smoking (T,F) 
+15. asthma: Asthma (T,F) 
+16. age: Age at surgery (numeric) 
+17. died: 1 year survival period - (T)rue value if died (T,F) 
