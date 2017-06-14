@@ -7,7 +7,7 @@
 * PlotlyJS.jl Notebook Viewer
 * Plots.jl Notebook Viewer
 * Seaborn.jl Notebook Viewer
-* To locally view the notebooks as
+* (For instructors) To locally view the notebooks as slide you can install the notebook extension [RISE](https://github.com/damianavila/RISE)
 
 
 ### Files in this diresctory:
