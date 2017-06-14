@@ -1,14 +1,15 @@
 # Intro to Julia
 
-This repository houses Julia-language course tutorials for courses taught by Brown Center for Biomedical Informatics.
+This repository houses Julia-language (R and possible other languages) tutorials for courses taught by Data Scientists and Post-Docs from the Brown Center for Biomedical Informatics.
+Materials by the main instructors are found in the course website.
 
-The master branch reflects the "current course" and can be checked out using
+This branch, the master branch, reflects the **current course** and can be checked out using
 
 ```
 git clone https://github.com/bcbi/julia_tutorials.git
 ```
 
-Note however that, the master branch will change over time.
+**Note:** The master branch will change over time, as courses change. For refering to the materials after your class is over see the [section for past courses](#past-courses)
 
 ### Current course:
 BIOL6535 Preclinical Elective
@@ -16,10 +17,15 @@ Summer 2017 at Brown University.
 
 The topics include:
 
-* Statistics
-* Plotting and Visualization
-  * [![Intro Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/biol6535_summer17?grs=github&t=white&p=plotting)
-  *
+* Statistics and Machine Learning in Julia
+* Plotting and Visualization in Julia
+  * Introductory Slides: [![Intro Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/biol6535_summer17?grs=github&t=white&p=plotting)
+  * PlotlyJS.jl Notebook Viewer
+  * Plots.jl Notebook Viewer
+  * Seaborn.jl Notebook Viewer
+* Statistical Analysis and Visualization in R
+* Natural Language Processing
+
 
 
 ### Past Course:
