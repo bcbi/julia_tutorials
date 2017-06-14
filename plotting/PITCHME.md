@@ -67,7 +67,7 @@ PlotlyJS is the corresponding Julia interface. This package constructs plotly gr
 * Mature library
 * Interactivity (even when inline)
 * Standalone or inline
-* Great looking plots
+* Good aesthetics
 
 +++
 ### Cons:
@@ -96,3 +96,22 @@ A Julia wrapper around the popular python package PyPlot (Matplotlib). It uses P
 * Uses python
 * Dependencies frequently cause setup issues
 * Inconsistent output depending on Matplotlib version
+
+---
+## Seaborn.jl
+
+A Julia wrapper around the  python package Seaborn, a high-level visualization library for statistical data analysis
+
++++
+### Pros:
+* Tons of functionality
+* Great documentation (In Python)
+* Easy to use
+* Good aesthetics
+
+
++++
+### Cons:
+* Uses python - need to set up Dependencies
+* Some of the inputs may need to be imported from Numpy or other python libraries
+* No native Julia documentation
