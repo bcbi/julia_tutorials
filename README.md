@@ -28,7 +28,7 @@ The topics include:
 
 
 
-### Past Course:
+### Past Courses:
 
 Past courses have a corresponding branch that can be checked out as follows:
 
