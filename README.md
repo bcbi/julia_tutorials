@@ -19,7 +19,7 @@ The topics include:
 
 * Statistics and Machine Learning in Julia
 * Plotting and Visualization in Julia
-  * Introductory Slides: [![Intro Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/biol6535_summer17?grs=github&t=white&p=plotting)
+  * Introductory Slides: [![Intro Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/master?grs=github&t=white&p=plotting)
   * PlotlyJS.jl Notebook Viewer
   * Plots.jl Notebook Viewer
   * Seaborn.jl Notebook Viewer
