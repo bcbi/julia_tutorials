@@ -32,6 +32,8 @@ A Julia implementation inspired by the "Grammar of Graphics" and ggplot2.
 * Slow time-to-first-plot
 * Lots of dependencies
 * No interactivity
+* Not very extensive documentation. Although because it was one
+  of the first, there are discussions
 
 ---
 ### Plots.jl
@@ -115,3 +117,15 @@ A Julia wrapper around the  python package Seaborn, a high-level visualization l
 * Uses python - need to set up Dependencies
 * Some of the inputs may need to be imported from Numpy or other python libraries
 * No native Julia documentation
+
+---
+## Plan for this lecture:
+
+* Compare the basics of PlotlyJS.jl and  Plots.jl
+---
+### What to explore after this lecture?
+
+* Finish basic exercises for PyPlot and Gadfly
+* Seaborn tutorials for [Distributions](http://seaborn.pydata.org/tutorial/distributions.html#distribution-tutorial)
+and [Categorical Variables](http://seaborn.pydata.org/tutorial/categorical.html#categorical-tutorial)
+* Explore a dataset
