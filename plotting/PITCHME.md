@@ -4,7 +4,7 @@
 <span style="font-size:0.6em; color:gray">Brown University</span> |
 <span style="font-size:0.6em; color:gray">June 15, 2017</span>
 
-
+Repository: https://github.com/bcbi/julia_tutorials.git
 
 ---
 ## Libraries
