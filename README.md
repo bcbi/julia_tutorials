@@ -20,9 +20,11 @@ The topics include:
 * Statistics and Machine Learning in Julia
 * Plotting and Visualization in Julia
   * Introductory Slides: [![Intro Slides](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/bcbi/julia_tutorials/master?grs=github&t=white&p=plotting)
-  * PlotlyJS.jl Notebook Viewer
-  * Plots.jl Notebook Viewer
-  * Seaborn.jl Notebook Viewer
+  * PlotlyJS.jl [Notebook Viewer](http://nbviewer.jupyter.org/github/bcbi/julia_tutorials/blob/master/plotting/plotlyjs_basics.ipynb)
+  * Plots.jl [Notebook Viewer](http://nbviewer.jupyter.org/github/bcbi/julia_tutorials/blob/master/plotting/plots_basics.ipynb)
+  * Seaborn.jl [Notebook Viewer](http://nbviewer.jupyter.org/github/bcbi/julia_tutorials/blob/master/plotting/seaborn.ipynb)
+  * PyPlot.jl [Notebook Viewer](http://nbviewer.jupyter.org/github/bcbi/julia_tutorials/blob/master/plotting/pyplot_basics.ipynb)
+  * Gadfly.jl [Notebook Viewer](http://nbviewer.jupyter.org/github/bcbi/julia_tutorials/blob/master/plotting/gadfly_basics.ipynb)
 * Statistical Analysis and Visualization in R
 * Natural Language Processing
 
