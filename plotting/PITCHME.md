@@ -2,7 +2,9 @@
 
 <span style="font-size:0.6em; color:gray">Isabel Restrepo, PhD</span> |
 <span style="font-size:0.6em; color:gray">Brown University</span> |
-<span style="font-size:0.6em; color:gray">April 26, 2017</span>
+<span style="font-size:0.6em; color:gray">June 15, 2017</span>
+
+
 
 ---
 ## Libraries
@@ -56,15 +58,16 @@ High-level, powerful library that wraps many plotting backends
 ---
 ## PlotlyJS/Plotly
 
-Both libraries have basically identical interface, the first one uses local resources, the later the cloud.
-Plotly.js is built on top of d3.js and stack.gl to create a high-level, declarative charting library. plotly.js ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps.
-PlotlyJS is the corresponding Julia interface. This package constructs plotly graphics using all local resources. To interact or save graphics to the Plotly cloud, use the plotly.jl library.
+* Wrapper of plotly.js, a javascript library built on top of d3.js.
+* The first one uses local resources, the later the cloud.
+
 
 
 
 +++
 ### Pros:
-* Tons of functionality/Super configurable
+* Tons of functionality
+* Super configurable
 * 2D and 3D
 * Mature library
 * Interactivity (even when inline)
@@ -76,7 +79,7 @@ PlotlyJS is the corresponding Julia interface. This package constructs plotly gr
 * No custom shapes
 * JSON may limit performance
 * Sometime it's difficult to save to file as SVG. (Okay as png and html)
-* To save to file requieres "plotting front-end", which may not work when working on remote servers
+* To save to file requires "plotting front-end", which may not work when working on remote servers
 * Silent failures of undefined properties
 
 ---
