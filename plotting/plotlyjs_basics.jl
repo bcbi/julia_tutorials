@@ -3,7 +3,7 @@ using PlotlyJS
 using DataFrames, RDatasets
 
 function linescatter()
-    trace1 = scatter(;x=1:4, y=[10, 15, 13, 17])
+    trace1 = scatter(;x=1:4, y=[10, 15, 13, 18])
     plot(trace1)
 end
 linescatter()
@@ -75,7 +75,6 @@ function advanced_layouts()
 end
 p1 = advanced_layouts()
 
-
 function grouped_bar_example()
     trace1 = bar(;x=["giraffes", "orangutans", "monkeys"],
                   y=[20, 14, 23],
@@ -140,7 +139,7 @@ box_plot()
 
 function data_frame_scatter()
     iris = dataset("datasets", "iris");
-    display(head(iris))
+#     display(head(iris))
     my_trace = scatter(iris, x=:SepalLength, y=:SepalWidth, mode="markers", group=:Species)
     plot(my_trace)
     p = Plot(iris, x=:SepalLength, y=:SepalWidth, mode="markers", marker_size=8, group=:Species)

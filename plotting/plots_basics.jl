@@ -12,7 +12,7 @@ function linescatter()
 end
 linescatter()
 
-function linescatter1()
+function multiple_scatter_traces()
     x=1:4
     y1 = [10, 15, 13, 17]
     y2 = [16, 5, 11, 9]
@@ -23,11 +23,11 @@ function linescatter1()
     plot!(y3, label="line")
     plot!(y4, line = (:dash, 2), label="dash")
 end
-linescatter1()
+multiple_scatter_traces()
 
 
 
-function linescatter1_v2()
+function multiple_scatter_traces_v2()
     x=1:4
     y1 = [10, 15, 13, 17]
     y2 = [16, 5, 11, 9]
@@ -36,18 +36,26 @@ function linescatter1_v2()
     y = [y1, y2, y3, y4]
     plot(y, line=(2, [:solid :solid :dash :dash]))
 end
-linescatter1_v2()
+multiple_scatter_traces_v2()
 
-function linescatter3()
+function data_labels()
     x = 1:5
     y1 = [1, 6, 3, 6, 1]
     y2 = [4, 1, 7, 1, 4]
 
-    plot(y1, line = (:scatter, 1), series_annotations=[text("A-1", :bottom, 12, :blue, "Raleway, sans-serif"),"A-2","A-3","A-4","A-5"], label="Team A")
-    plot!(y2, line = (:scatter, 1), series_annotations=[text("B-1", :top, 12, :red, "Times"),"B-2","B-3","B-4","B-5"], label="Team B")
+    plot(y1, line = (:scatter, 1), 
+         series_annotations=[text("A-1", :bottom, 12, :blue, "Raleway, sans-serif"),
+                             "A-2","A-3","A-4","A-5"], 
+         label="Team A",
+         title="Data Labels on the plot")
+    plot!(y2, line = (:scatter, 1), 
+         series_annotations=[text("B-1", :top, 12, :red, "Times"),
+                                  "B-2","B-3","B-4","B-5"], 
+         label="Team B")
 end
-linescatter3()
+data_labels()
 
+# pyplot() -- to fill to one
 function area1()
     y1=[0, 2, 3, 5] #, fill="tozeroy")
     y2=[3, 5, 1, 7] #, fill="tonexty")
@@ -56,17 +64,23 @@ function area1()
 end
 area1()
 
-pyplot()
-z = rand(10,10)
-plot(spy(z), heatmap(z), contour(z), surface(z))
+function plot_matrices()
+    pyplot()
+    z = rand(10,10)
+    plot(spy(z), heatmap(z), contour(z), surface(z))
+end
+plot_matrices()
 
-l = @layout [  a{0.3w} [grid(3,3)
-                         b{0.2h} ]]
-plot(
-    rand(10,11),
-    layout = l, legend = false, seriestype = [:bar :scatter :path],
-    title = reshape(["($i)" for i=1:11], 1, 11), titleloc = :center, titlefont = font(8)
-)
+function advanced_layouts()
+    l = @layout [  a{0.3w} [grid(3,3)
+                             b{0.2h} ]]
+    plot(
+        rand(10,11),
+        layout = l, legend = false, seriestype = [:bar :scatter :path],
+        title = reshape(["($i)" for i=1:11], 1, 11), titleloc = :center, titlefont = font(8)
+    )
+end
+advanced_layouts()
 
 plotlyjs()
 function grouped_bar_example()
@@ -123,9 +137,8 @@ box_plot()
 
 
 function dataframe_scatter()
-    pyplot()
     iris = dataset("datasets", "iris");
-    display(head(iris))
+#     display(head(iris));
     scatter(iris, :SepalLength, :SepalWidth, group=:Species,
         title = "Iris Sepal lengh vs width",
         xlabel = "Length", ylabel = "Width",
