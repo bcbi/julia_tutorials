@@ -1,0 +1,11 @@
+ID	Name	Age	Race	Status
+1	"Ashley"	27	"Asian"	Yes
+2	"Dylan"	23	"Black"	No
+3	"Shannon"	28	"White"	Yes
+4	"Michael"	26	"White"	Yes
+5	"Taylor"	31	"White"	No
+6	"Julia"	27	"White"	No
+7	"Jenny"	26	"Asian"	No
+8	"Valerie"	27	"Asian"	No
+9	"Paul"	33	"White"	No
+10	"Isabel"	33	999	No
