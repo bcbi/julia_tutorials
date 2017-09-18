@@ -51,7 +51,7 @@ hotdeck_dataframe!(ckd_subset)
 ## Fitting Random Forest
 # Cast data to numeric arrays
 labels = convert(Array{Int,1}, map(x -> x == "ckd" ? 1 : 0, ckd_subset[:class]))
-features = convert(Array, ckd_subset[:, 1:(end - 1)])
+features = convert(Array{Float64, 2}, ckd_subset[:, 1:(end - 1)])
 
 
 ## Split data into training and test set
