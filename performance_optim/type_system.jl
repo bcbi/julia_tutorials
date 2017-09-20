@@ -1,4 +1,5 @@
-# type system
+# type_system.jl
+
 
 function count_letters(x)
     res = Dict()
