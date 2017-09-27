@@ -61,7 +61,7 @@ println(time() - t1)
 
 
 
-# Challenge Problem 4.
+# Challenge Problem 5.
 # The functions below read in a DataFrame object and modify
 # the contents of one column based on whether or not a value
 # appears in a column of a different DataFrame. The current
@@ -128,7 +128,7 @@ t2 = time()
 
 
 
-# Challenge Problem 5.
+# Challenge Problem 6.
 # You are given a dataset with three columns. Column 1 has patient
 # IDs. Both columns 2 and 3 have ICD-10 codes for that patient.
 # Your task is to optimize the code below that generates how frequently
