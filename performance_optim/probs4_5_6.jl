@@ -113,9 +113,6 @@ end
 
 println("elapsed: $(time() - t1)")
 
-t2 = time()
-
-
 
 
 
