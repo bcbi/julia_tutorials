@@ -1,4 +1,6 @@
 # type_basics.jl
+using DataFrames
+
 
 
 # Use the typeof() function to determine a variable's type
@@ -15,3 +17,10 @@ Int64 <: Number
 Real <: Number
 String <: Float64
 Array{Int,2} <: Any
+
+
+df1 = DataFrame(a = rand(100), b = randn(100), c = rand(['x', 'y', 'z'], 100))
+
+typeof(df1)
+
+eltype(df1[:z])
