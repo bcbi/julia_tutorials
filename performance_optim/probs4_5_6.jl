@@ -1,6 +1,6 @@
 # Challenge Problem 4.
-# You are given 100,000-by-20,000 a matrix, `A`, and your task
-# compute the means, standard deviations, and variances of each
+# You are given 100,000-by-20,000 a matrix, `A`, and your task is
+# to compute the means, standard deviations, and variances of each
 # column in the matrix. The code below accomplishes this, but
 # can be optimize in a few ways.
 #
@@ -62,11 +62,20 @@ println(time() - t1)
 
 
 # Challenge Problem 5.
-# The functions below read in a DataFrame object and modify
-# the contents of one column based on whether or not a value
-# appears in a column of a different DataFrame. The current
-# performance can be improved considerably. Find a way to
-# improve the performance using one (or several) of the
+# You are given two dataframe objects: `diabetes` and `dia_consent`.
+# The two data sets have data for the same patients. The the `dia_consent`
+# data set indicates whether a given patient has indicated their
+# willingness to be in a follow-up study. But patients in the follow-up
+# study must have at least two visits to qualify. Note that each row
+# in the `diabetes` dataframe corresponds to a visit.
+#
+# The current code scans through the `diabetes` data set and the
+# `dia_consent` data set and creates a new column in the `dia_consent`
+# data set to indicate whether or not a given patient can be included
+# in the upcoming follow-up study.
+
+# The performance of the current code can be improved considerably.
+# Find a way to improve the performance using one (or several) of the
 # techniques discussed to this point.
 #
 # The code's current run time is about 9 minutes
@@ -112,7 +121,7 @@ end
 
 
 println("elapsed: $(time() - t1)")
-
+#
 
 
 
@@ -131,7 +140,7 @@ println("elapsed: $(time() - t1)")
 # Your task is to optimize the code below that generates how frequently
 # each pair of ICD-10 codes co-occur.
 #
-# The code's current run time is ???
+# The code's current run time is ??? 
 
 using Combinatorics
 
