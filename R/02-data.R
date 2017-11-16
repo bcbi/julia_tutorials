@@ -11,7 +11,7 @@ library(car)
 
 # From CSV/TSV/Delimited files
 getwd()
-setwd('/Users/alee35/Dropbox (Brown)/biol6535/data/')
+setwd('/Users/alee35/Google Drive/repos/julia_tutorials/R/data/')
 df1 <- read.csv('mydata.csv', na.strings = c("999"))
 df1 <- read_csv('mydata.csv', na = c("999"))
 df2 <- read_delim('mydata.txt', delim = '\t', na = c("999"))
@@ -48,6 +48,7 @@ glimpse(df1)
 # AND
 # - group_by() perform any of these verbs "by group"
 filter(df1, Status == "Yes")
+
 df1 %>%
   filter(Status == "Yes") 
 df1 %>%
@@ -56,10 +57,9 @@ df1 %>%
 df1 %>%  
   mutate(AgeGroup = ifelse(Age > 30, "> 30", "< 30")) %>%
   arrange(Race)
-df1 %>%
-  group_by(Status) %>%
-  summarise(count = n(),
-            mean_age = mean(Age))
+df1 %>% 
+  group_by(Status) %>% 
+  summarise(count = n(), mean_age = mean(Age))
 
 # Two Table Verbs
 # - mutating joins: add new variables and/or new observations
@@ -82,15 +82,15 @@ water2 <- data.frame(Name = c('whale', 'hippo', 'eel', 'octopus', 'jellyfish'),
                      stringsAsFactors = F)
 
 mammals %>%
-  inner_join(water)
+  inner_join(water2)
 mammals %>%
-  full_join(water)
+  full_join(water2)
 mammals %>%
-  left_join(water)
+  left_join(water2)
 mammals %>%
-  right_join(water)
+  right_join(water2)
 mammals %>%
-  anti_join(water)
+  anti_join(water2)
 mammals %>%
   semi_join(water)
 mammals %>%
@@ -122,11 +122,19 @@ mammals %>%
 # Available from the UCI Machine Learning Repository at:
 # https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008#
 
-# - Read in data ("./data/diabetic_data.csv")
+# read data
+dia <- read_csv('diabetic_data.csv', na = '?')
+# map <- read_csv('IDs_mapping.csv', na = 'NULL', col_names = FALSE)
 
 # - Calculate the total number of procedures for each patient, then get the mean nr of procs per patient
+nr_procs <- dia %>%
+  group_by(patient_nbr) %>%
+  summarise(tot_procs = sum(num_procedures))
+colMeans(nr_procs)[2]
 
 # - Subset patient_nbrs and total number of procedures for patients who had more procedures than the mean
+many_procs <- nr_procs %>%
+  filter(tot_procs > colMeans(nr_procs)[2])
 
 
 
@@ -177,13 +185,13 @@ dia <- dia %>%
 
 # spot check and convert types
 glimpse(dia)
-dia$age <- as.factor(dia$age)
-dia$medical_specialty <- as.factor(dia$medical_specialty)
-dia$`glyburide-metformin`  <- as.factor(dia$`glyburide-metformin`)
-dia$`glipizide-metformin` <- as.factor(dia$`glipizide-metformin`)
-dia$`glimepiride-pioglitazone` <- as.factor(dia$`glimepiride-pioglitazone`)
-dia$`metformin-rosiglitazone` <- as.factor(dia$`metformin-rosiglitazone`)
-dia$`metformin-pioglitazone` <- as.factor(dia$`metformin-pioglitazone`)
+# dia$age <- as.factor(dia$age)
+# dia$medical_specialty <- as.factor(dia$medical_specialty)
+# dia$`glyburide-metformin`  <- as.factor(dia$`glyburide-metformin`)
+# dia$`glipizide-metformin` <- as.factor(dia$`glipizide-metformin`)
+# dia$`glimepiride-pioglitazone` <- as.factor(dia$`glimepiride-pioglitazone`)
+# dia$`metformin-rosiglitazone` <- as.factor(dia$`metformin-rosiglitazone`)
+# dia$`metformin-pioglitazone` <- as.factor(dia$`metformin-pioglitazone`)
 
 summary(dia)
 

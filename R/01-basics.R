@@ -99,7 +99,7 @@ t <- c(v, u, w)
 t[1]                            # get first element
 t[1] <- 'ostrich'               # assign to first element
 # Removing an element
-t[-1]
+t <- t[-1]
 
 # Slicing and subsetting a vector
 t[1:2]                          # get subset of vector (1st and 2nd element)
@@ -169,7 +169,7 @@ dim(A)
 # Index a matrix: same as indexing a vector, but there are two dimensions
 A[2, 3]
 A[2,]
-A[,3]
+A[ ,3]
 A[, c(1, 3)]
 
 # Assign row and column names to access them by name

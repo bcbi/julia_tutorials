@@ -19,6 +19,7 @@ sd(x)
 var(x)
 min(x)
 max(x)
+sum(x)
 skewness(x)      # measure of symmetry (left/right skew indicates mean!=median)
 kurtosis(x)      # tail shape of distribution (thin/fat compared to standard tail of ~N(0,1))
 
@@ -195,13 +196,17 @@ summary(glm3)
 
 # prediction and model accuracy
 threshold <- 0.5
+
 test_predictions <- data.frame(prob = predict(glm, test, type = 'response')) %>%
   mutate(class = ifelse(prob > threshold, 1, 0))
+
 confusion_mx <- table(test_predictions$class, test$admit)
+
 accuracy <- function(tb) {
   acc <- (tb[1,1] + tb[2,2]) / sum(tb)
   return(acc)
 }
+
 accuracy(confusion_mx)
 
 
